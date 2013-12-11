@@ -1,5 +1,11 @@
-function Doorkeeper() {
-	this.url = "http://api.doorkeeper.jp/events?callback=?";
+function Doorkeeper(url) {
+	this.url = url;
+};
+
+Doorkeeper.prototype.setURL = function(url) {
+	this.url = url;
+	console.log(this.url);
+	return this.url;
 };
 
 Doorkeeper.prototype.getevents = function() {
@@ -7,7 +13,7 @@ Doorkeeper.prototype.getevents = function() {
 		console.log(res);
 		$.each(res, function(key, val) {
 			console.log(val.event.title);
-			console.log(val.event.description);
+//			console.log(val.event.description);
 			Doorkeeper.prototype.eventCallback(val);
 		});
 	});
