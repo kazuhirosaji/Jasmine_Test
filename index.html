@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="./src/Doorkeeper.js"></script>
+<script>
+    $(function () {
+        var doorkeeper = new Doorkeeper();
+        console.log("Create Doorkeeper!");
+	    setQuery = function() {
+		var query = document.getElementById("search_text").value;
+		doorkeeper.setURL("http://api.doorkeeper.jp/events?callback=?");
+		console.log(query);
+		doorkeeper.setQuery(query);
+		doorkeeper.getevents();
+	    }
+    });
+
+</script>
+<input type="text" id="search_text">
+<input type="button" id="button" onclick="setQuery()" value="search"><BR>
+</body>
+</html>

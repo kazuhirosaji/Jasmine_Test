@@ -40,5 +40,11 @@ describe("Doorkeeper", function() {
 	});
   });
 
+  it("set query to url", function() {
+		var url = "http://api.doorkeeper.jp/events?callback=?";
+		var query = "javascript";
+		expect(doorkeeper.setQuery(query)).toEqual(url+"&q=javascript");
+  });
+
 
 });

@@ -19,6 +19,12 @@ Doorkeeper.prototype.getevents = function() {
 	});
 };
 
+Doorkeeper.prototype.setQuery = function(query) {
+	this.url = this.url + "&q="+ query;
+	console.log(this.url);
+	return this.url;
+};
+
 Doorkeeper.prototype.eventCallback = function(val) {
 };
 
