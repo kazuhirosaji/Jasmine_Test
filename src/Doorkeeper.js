@@ -14,7 +14,7 @@ Doorkeeper.prototype.getevents = function() {
 		$.each(res, function(key, val) {
 			console.log(val.event.title);
 //			console.log(val.event.description);
-			Doorkeeper.prototype.eventCallback(val);
+			Doorkeeper.prototype.eventCallback(val.event);
 		});
 	});
 };
@@ -25,7 +25,13 @@ Doorkeeper.prototype.setQuery = function(query) {
 	return this.url;
 };
 
-Doorkeeper.prototype.eventCallback = function(val) {
+Doorkeeper.prototype.eventCallback = function(event) {
+
+	var tr = $("<tr/>");
+	var td = $("<td/>");
+	$("<a/>").attr('href', event.public_url).text(event.title).appendTo(td).appendTo(tr);
+    tr.appendTo($("#events"));
+	console.log($("#events").html);
 };
 
 

@@ -8,6 +8,14 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="./src/Doorkeeper.js"></script>
+
+<input type="text" id="search_text">
+<input type="button" id="button" onclick="setQuery()" value="search"><BR>
+<table>
+    <tbody id="events">
+    <!-- イベント一覧が表示される -->
+    </tbody>
+</table>
 <script>
     $(function () {
         var doorkeeper = new Doorkeeper();
@@ -22,7 +30,5 @@
     });
 
 </script>
-<input type="text" id="search_text">
-<input type="button" id="button" onclick="setQuery()" value="search"><BR>
 </body>
 </html>
